@@ -6,13 +6,13 @@ class House {
   constructor(components) {
     this.address = components['address']
     this.square_feet = components['square_feet']
-    this.num_bedrooms = components[num_bedrooms] || 3
+    this.num_bedrooms = components['num_bedrooms'] || 3
     this.num_baths = components['num_baths'] || 2
     this.cost = components['cost'] || 320000
     this.down_payment = components['down_payment'] || 0.20
     this.sold = components['sold'] || false
-    this.short_sale = components[coshort_sale]
-    this.has_tenants = components[has_tenants] || false
+    this.short_sale = components['coshort_sale']
+    this.has_tenants = components['has_tenants'] || false
 
     // this.address = address
     // this.square_feet = square_feet
@@ -42,3 +42,18 @@ class House {
     return `${obscure_address} : ${square_feet} sq. ft., ${num_bedrooms} bed, ${num_baths} bath. ${cost}`
   }
 }
+
+var coba = {
+  address : "Jl. Tanah Kusir II kebayoran lama, jakarta selatan",
+  square_feet : 13,
+  num_baths : 2,
+  cost : 26000,
+  down_payment : 0.01,
+  sold : true,
+  coshort_sale : true,
+  has_tenants : true
+}
+
+var property1 = new House(coba)
+console.log(property1);
+console.log(property1.address)
