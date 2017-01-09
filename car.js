@@ -1,17 +1,21 @@
 "use strict"
 
 class Car {
-
   start_car(options) {
-    if (options && options['headlights'])
+    if (options && options['headlights']) {
       this.headlights = options['headlights']
-    else
+    } else {
       this.headlights = true
-
-    if (options && options['gear'])
+    }
+    if (options && options['gear']){
       this.gear = options['gear']
-    else
+    } else {
       this.gear = 1
+    }
+  }
+
+  hasOwnProperty(x){
+    this.headlights = x.headlights;
   }
 }
 
@@ -22,7 +26,7 @@ herbie.start_car()
 console.log(herbie.headlights) // true
 
 // But what happens when we want to start without headlights?
-herbie.start_car({
+herbie.hasOwnProperty({
   headlights: false
 })
 console.log(herbie.headlights) // true ...KOK BISA?!
