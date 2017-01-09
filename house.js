@@ -9,9 +9,9 @@ class House {
     this.num_baths = components["num_baths"] || 2
     this.cost = components["cost"] || 320000
     this.down_payment = components["down_payment"] || 0.20
-    this.sold = components["sold"] || false
+    this.sold = components.hasOwnProperty(["sold"]) || false
     this.short_sale = components["short_sale"]
-    this.has_tenants = components["has_tenants"] || false
+    this.has_tenants = components.hasOwnProperty(["has_tenants"]) || false
   }
 
   obscure_address() {
