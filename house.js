@@ -45,3 +45,20 @@ constructor(params){
     return `${this.obscure_address()} : ${this.square_feet} sq. ft., ${this.num_bedrooms} bed, ${this.num_baths} bath. ${this.cost}`
   }
 }
+
+
+var isi = {
+  cost:10000,
+  down_payment: 0.5,
+  address:"Jakarta Indonesia Kode Pos 277017",
+  square_feet: 150,
+  short_sale: 60
+}
+var villa = new House(isi)
+// Atau Bisa  Di Buat Seperti diwabah ini
+//var villa = new House({cost:50000, down_payment: 0.5, address: "Jakarta", square_feet: 120, short_sale: 50})
+
+console.log(villa.obscure_address());
+console.log(villa.buy(5000,1));
+console.log(villa.DP());
+console.log(villa.to_s());
