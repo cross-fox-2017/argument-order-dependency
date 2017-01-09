@@ -15,11 +15,11 @@ class House {
   }
 
   obscure_address() {
-    this.address.replace(/.{10}$/g, '****')
+    return this.address.replace(/.{10}$/g, '****')
   }
 
   buy(money, good_credit) {
-    if (money >= down_payment && good_credit)
+    if (money >= this.down_payment && good_credit)
       this.sold = true
   }
 
@@ -28,12 +28,20 @@ class House {
   }
 
   to_s() {
-    return `${obscure_address} : ${square_feet} sq. ft., ${num_bedrooms} bed, ${num_baths} bath. ${cost}`
+    return `${this.obscure_address()} : ${this.square_feet} sq. ft., ${this.num_bedrooms} bed, ${this.num_baths} bath. ${this.cost}`
   }
 }
 
-var BB = new House({address: false, square_feet :"70"});
+var BB = new House({address: "jl.lada no.5/6", square_feet :"70" ,down_payment : 30});
 
 console.log(BB);
+
+
+console.log(BB.obscure_address("lada"));
+BB.buy(30,20)
+console.log(BB.down_payment);
+console.log(BB.to_s())
+
+
 
 console.log(BB.address);
