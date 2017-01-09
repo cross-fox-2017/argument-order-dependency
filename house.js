@@ -2,16 +2,16 @@
 
 class House {
 
-  constructor(address, square_feet, num_bedrooms, num_baths, cost, down_payment, sold, has_tenants) {
-    this.address = address
-    this.square_feet = square_feet
-    this.num_bedrooms = num_bedrooms || 3
-    this.num_baths = num_baths || 2
-    this.cost = cost || 320000
-    this.down_payment = down_payment || 0.20
-    this.sold = sold || false
-    this.short_sale = short_sale
-    this.has_tenants = has_tenants || false
+  constructor(x) {
+    this.address = x['address']
+    this.square_feet = x['square_feet']
+    this.num_bedrooms = x['num_bedrooms']
+    this.baths = x['baths']
+    this.cost = x['cost']
+    this.down_payment = x['down_payment']
+    this.sold = x['sold']
+    this.short_sale = x['short_sale']
+    this.has_tenants = x['has_tenants']
   }
 
   obscure_address() {
@@ -28,6 +28,20 @@ class House {
   }
 
   to_s() {
-    return `${obscure_address} : ${square_feet} sq. ft., ${num_bedrooms} bed, ${num_baths} bath. ${cost}`
+    return console.log(`${this.address} : ${this.square_feet} sq. ft., ${this.num_bedrooms} bed,
+    ${this.baths} bath. ${this.cost}`)
   }
 }
+
+let house = new House({
+  address: 'Pondok Indah',
+  square_feet: 1200,
+  num_bedrooms: 3,
+  baths: 2,
+  cost: 420000,
+  down_payment: 0.20,
+  sold: false,
+  short_sale: 20000,
+  has_tenants: false
+});
+house.to_s();
