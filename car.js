@@ -1,15 +1,19 @@
 "use strict"
 
 class Car {
-
+  constructor() {
+    // this.headlights = "on"
+    // this.gear = 0
+  }
   start_car(options) {
-    if (options && options['headlights'])
+    if (options && options.hasOwnProperty('headlights') )
       this.headlights = options['headlights']
     else
       this.headlights = true
 
     if (options && options['gear'])
       this.gear = options['gear']
+      //options['gear']
     else
       this.gear = 1
   }
@@ -26,3 +30,4 @@ herbie.start_car({
   headlights: false
 })
 console.log(herbie.headlights) // true ...KOK BISA?!
+// karena fungsi if hanya mengecek apakah salah satu kondisi terpenuhi, tapi tidak mengecek nilai property object nya
