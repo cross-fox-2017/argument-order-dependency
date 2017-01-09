@@ -2,16 +2,27 @@
 
 class House {
 
-  constructor(address, square_feet, num_bedrooms, num_baths, cost, down_payment, sold, has_tenants) {
-    this.address = address
-    this.square_feet = square_feet
-    this.num_bedrooms = num_bedrooms || 3
-    this.num_baths = num_baths || 2
-    this.cost = cost || 320000
-    this.down_payment = down_payment || 0.20
-    this.sold = sold || false
-    this.short_sale = short_sale
-    this.has_tenants = has_tenants || false
+  // constructor(address, square_feet, num_bedrooms, num_baths, cost, down_payment, sold, has_tenants)
+  constructor(components) {
+    this.address = components['address']
+    this.square_feet = components['square_feet']
+    this.num_bedrooms = components['num_bedrooms'] || 3
+    this.num_baths = components['num_baths'] || 2
+    this.cost = components['cost'] || 320000
+    this.down_payment = components['down_payment'] || 0.20
+    this.sold = components['sold'] || false
+    this.short_sale = components['coshort_sale']
+    this.has_tenants = components['has_tenants'] || false
+
+    // this.address = address
+    // this.square_feet = square_feet
+    // this.num_bedrooms = num_bedrooms || 3
+    // this.num_baths = num_baths || 2
+    // this.cost = cost || 320000
+    // this.down_payment = down_payment || 0.20
+    // this.sold = sold || false
+    // this.short_sale = short_sale
+    // this.has_tenants = has_tenants || false
   }
 
   obscure_address() {
@@ -31,3 +42,18 @@ class House {
     return `${obscure_address} : ${square_feet} sq. ft., ${num_bedrooms} bed, ${num_baths} bath. ${cost}`
   }
 }
+
+var coba = {
+  address : "Jl. Tanah Kusir II kebayoran lama, jakarta selatan",
+  square_feet : 13,
+  num_baths : 2,
+  cost : 26000,
+  down_payment : 0.01,
+  sold : true,
+  coshort_sale : true,
+  has_tenants : true
+}
+
+var property1 = new House(coba)
+console.log(property1);
+console.log(property1.address)
