@@ -32,8 +32,9 @@ herbie.start_car({headlights : false, gear: 2})
 console.log(herbie.headlights) // true ...KOK BISA?!
 console.log(herbie.gear);
 
-herbie.start_car({
-  gear: 3
-})
-console.log(herbie.headlights)
-console.log(herbie.gear);
+// herbie.start_car({
+//   gear: 3
+// })
+//
+// console.log(herbie.headlights)
+// console.log(herbie.gear);
